@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+section, header, footer, main, div {
+  max-width: 100%;
+}
+
 @layer base {
   :root {
     --navy-dark: #0A1628;
@@ -13,27 +23,37 @@
     --gold-dark: #B8941F;
   }
 
+  *, *::before, *::after {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  img, video, svg {
+    max-width: 100%;
+  }
+
   body {
-    @apply bg-white text-gray-800 font-sans;
+    @apply bg-white text-gray-800 font-sans overflow-x-hidden;
+    width: 100%;
   }
 
   h1 {
-    @apply text-5xl font-bold tracking-tight font-display;
+    @apply text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight font-display;
     color: var(--navy-dark);
   }
 
   h2 {
-    @apply text-4xl font-bold font-display;
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold font-display;
     color: var(--navy-dark);
   }
 
   h3 {
-    @apply text-2xl font-semibold;
+    @apply text-xl sm:text-2xl font-semibold;
     color: var(--navy-dark);
   }
 
   h4 {
-    @apply text-xl font-semibold;
+    @apply text-lg sm:text-xl font-semibold;
     color: var(--navy-dark);
   }
 

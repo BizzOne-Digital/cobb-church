@@ -2,9 +2,10 @@ import { prisma } from '@/lib/prisma'
 import { notFound } from 'next/navigation'
 import CrisisNeedForm from '@/components/admin/CrisisNeedForm'
 
-export default async function EditCrisisNeedPage({ params }: { params: { id: string } }) {
+export default async function EditCrisisNeedPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const crisisNeed = await prisma.crisisNeed.findUnique({
-    where: { id: params.id },
+    where: { id },
   })
 
   if (!crisisNeed) {

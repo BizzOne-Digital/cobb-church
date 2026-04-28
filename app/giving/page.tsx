@@ -109,7 +109,7 @@ export default function GivingPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-10 mt-6 sm:mt-8">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
                   <Church className="h-10 w-10 text-gold" />
@@ -195,9 +195,9 @@ export default function GivingPage() {
             ))}
           </div>
 
-          <div className="mt-16 text-center">
-            <p className="text-2xl font-bold mb-2">When We Work Together,</p>
-            <p className="text-4xl font-bold text-gold italic">Lives Are Changed.</p>
+          <div className="mt-12 sm:mt-16 text-center">
+            <p className="text-xl sm:text-2xl font-bold mb-2">When We Work Together,</p>
+            <p className="text-3xl sm:text-4xl font-bold text-gold italic">Lives Are Changed.</p>
           </div>
         </div>
       </section>

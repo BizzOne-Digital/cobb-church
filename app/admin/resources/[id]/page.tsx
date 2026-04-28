@@ -2,9 +2,10 @@ import { prisma } from '@/lib/prisma'
 import { notFound } from 'next/navigation'
 import ResourceForm from '@/components/admin/ResourceForm'
 
-export default async function EditResourcePage({ params }: { params: { id: string } }) {
+export default async function EditResourcePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const resource = await prisma.resource.findUnique({
-    where: { id: params.id },
+    where: { id },
   })
 
   if (!resource) {

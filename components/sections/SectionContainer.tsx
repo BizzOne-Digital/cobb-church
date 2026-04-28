@@ -46,7 +46,7 @@ const SectionContainer = ({
 
   return (
     <section
-      className={`${bgClasses[background]} ${paddingClasses[padding]} ${className}`}
+      className={`${bgClasses[background]} ${paddingClasses[padding]} ${className} relative w-full overflow-hidden`}
       style={style}
     >
       {backgroundImage && (

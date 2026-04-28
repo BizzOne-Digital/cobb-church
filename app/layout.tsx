@@ -31,19 +31,30 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-white">
-      <body className="font-sans antialiased bg-white">
-        <Header />
-        <main>
-          {children}
-        </main>
-        <Footer />
+    <html lang="en" className="bg-white overflow-x-hidden">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+      </head>
+      <body className="font-sans antialiased bg-white overflow-x-hidden w-full">
+        <div className="w-full overflow-x-hidden">
+          <Header />
+          <main className="w-full">
+            {children}
+          </main>
+          <Footer />
+        </div>
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

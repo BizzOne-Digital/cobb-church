@@ -141,13 +141,13 @@ export default function Join() {
         background="image"
         backgroundImage="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop"
         padding="large"
-        className="min-h-96 flex items-center justify-center relative"
+        className="min-h-72 sm:min-h-96 flex items-center justify-center"
       >
-        <div className="max-w-3xl mx-auto text-center text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white font-display">
+        <div className="max-w-3xl mx-auto text-center text-white px-2">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-white font-display">
             You Don&apos;t Have to Do This Alone.
           </h1>
-          <p className="text-xl text-gray-200">
+          <p className="text-base sm:text-xl text-gray-200">
             Join a growing network of pastors and churches working together to strengthen Cobb County.
           </p>
         </div>
@@ -156,7 +156,7 @@ export default function Join() {
       {/* Why Join Section */}
       <SectionContainer background="white" padding="large">
         <div className="mb-12">
-          <h2 className="text-center text-4xl font-bold text-dark-blue mb-12 font-display">Why Join?</h2>
+          <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-dark-blue mb-8 sm:mb-12 font-display">Why Join?</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -426,9 +426,9 @@ export default function Join() {
 
       {/* What Happens Next */}
       <SectionContainer background="light-gray" padding="large">
-        <h2 className="text-center text-4xl font-bold text-dark-blue mb-12 font-display">What Happens Next</h2>
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-dark-blue mb-8 sm:mb-12 font-display">What Happens Next</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {[
             {
               step: '1',

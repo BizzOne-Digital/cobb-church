@@ -156,26 +156,26 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16">
             {/* Vision */}
             <Card className="bg-navy-medium border-0">
-              <CardContent className="p-10">
-                <div className="w-16 h-16 mb-6 rounded-full bg-gold flex items-center justify-center">
-                  <Eye className="h-8 w-8 text-navy-dark" />
+              <CardContent className="p-6 sm:p-8 md:p-10">
+                <div className="w-14 h-14 mb-5 rounded-full bg-gold flex items-center justify-center">
+                  <Eye className="h-7 w-7 text-navy-dark" />
                 </div>
-                <p className="text-gold text-sm font-semibold uppercase mb-4">OUR VISION</p>
-                <h2 className="text-3xl font-bold mb-6">
+                <p className="text-gold text-sm font-semibold uppercase mb-3">OUR VISION</p>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4">
                   What Could God Do If We Truly Moved Together?
                 </h2>
-                <p className="text-gray-300 mb-6">
+                <p className="text-gray-300 mb-4 text-sm sm:text-base">
                   We believe unity isn't just a nice idea—it's a responsibility. Our vision is to see pastors and churches across Cobb County work together in a way that is real, visible, and impactful.
                 </p>
                 <div className="space-y-3">
                   {visionPoints.map((point, idx) => (
                     <div key={idx} className="flex items-start gap-3">
-                      <CheckCircle2 className="h-5 w-5 text-gold flex-shrink-0 mt-1" />
-                      <p className="text-gray-200">{point}</p>
+                      <CheckCircle2 className="h-4 w-4 text-gold flex-shrink-0 mt-1" />
+                      <p className="text-gray-200 text-sm sm:text-base">{point}</p>
                     </div>
                   ))}
                 </div>
-                <p className="text-gray-300 mt-6">
+                <p className="text-gray-300 mt-4 text-sm sm:text-base">
                   When we move together, we don't just do more—we do better. More impact made for the Kingdom.
                 </p>
               </CardContent>
@@ -183,12 +183,12 @@ export default function AboutPage() {
 
             {/* Mission */}
             <Card className="bg-gold border-0">
-              <CardContent className="p-10">
-                <div className="w-16 h-16 mb-6 rounded-full bg-navy-dark flex items-center justify-center">
-                  <Target className="h-8 w-8 text-gold" />
+              <CardContent className="p-6 sm:p-8 md:p-10">
+                <div className="w-14 h-14 mb-5 rounded-full bg-navy-dark flex items-center justify-center">
+                  <Target className="h-7 w-7 text-gold" />
                 </div>
-                <p className="text-navy-dark text-sm font-semibold uppercase mb-4">OUR MISSION</p>
-                <h2 className="text-3xl font-bold text-navy-dark mb-6">
+                <p className="text-navy-dark text-sm font-semibold uppercase mb-3">OUR MISSION</p>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-navy-dark mb-4">
                   To connect pastors and churches in authentic relationship so we can share resources, serve together, and strengthen our community.
                 </h2>
               </CardContent>

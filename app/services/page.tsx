@@ -156,7 +156,7 @@ export default function ServicesPage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-6 sm:mt-8">
               <div className="text-center">
                 <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
                   <Users className="h-10 w-10 text-gold" />
@@ -252,15 +252,15 @@ export default function ServicesPage() {
               const Icon = step.icon
               return (
                 <div key={idx} className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-navy-dark flex items-center justify-center">
-                      <Icon className="h-12 w-12 text-gold" />
+                  <div className="relative mb-6 inline-block">
+                    <div className="w-20 h-20 mx-auto rounded-full bg-navy-dark flex items-center justify-center">
+                      <Icon className="h-10 w-10 text-gold" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                      <span className="text-navy-dark font-bold text-xl">{step.number}</span>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+                      <span className="text-navy-dark font-bold text-lg">{step.number}</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy-dark mb-3">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-navy-dark mb-3">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               )

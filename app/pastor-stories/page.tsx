@@ -31,7 +31,7 @@ export default function PastorStoriesPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-80 md:h-96 overflow-hidden">
+      <section className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-dark-blue/85 to-dark-blue/70 z-10" />
         <Image
           src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop"
@@ -40,20 +40,20 @@ export default function PastorStoriesPage() {
           className="object-cover"
         />
         <div className="relative z-20 h-full flex items-center">
-          <div className="max-w-4xl mx-auto px-4 md:px-8 w-full">
-            <h1 className="text-white text-4xl md:text-5xl font-display font-bold mb-4">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 w-full">
+            <h1 className="text-white text-3xl sm:text-4xl md:text-5xl font-display font-bold mb-3 sm:mb-4">
               HEAR FROM PASTORS
             </h1>
-            <p className="text-white text-lg md:text-xl leading-relaxed">
-              Real stories from pastors we are experiencing the power of unity and collaboration.
+            <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed">
+              Real stories from pastors experiencing the power of unity and collaboration.
             </p>
           </div>
         </div>
       </section>
 
       {/* Stories Grid */}
-      <section className="py-16 md:py-24 px-4 md:px-8 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16">
           {stories.map((story, index) => (
             <div key={index} className="text-center group">
               <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden">
@@ -82,8 +82,8 @@ export default function PastorStoriesPage() {
           ))}
         </div>
 
-        <div className="text-center py-12 border-t border-border-gray">
-          <h2 className="text-2xl md:text-3xl font-display font-semibold mb-4 text-dark-blue">
+        <div className="text-center py-10 sm:py-12 border-t border-border-gray">
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-semibold mb-4 text-dark-blue">
             More Stories Coming
           </h2>
           <p className="text-medium-gray mb-6">We&apos;re capturing stories of impact, unity, and transformation.</p>
@@ -94,15 +94,15 @@ export default function PastorStoriesPage() {
       </section>
 
       {/* Closing CTA */}
-      <section className="py-16 md:py-24 px-4 md:px-8 bg-dark-blue text-white">
+      <section className="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 bg-dark-blue text-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-semibold mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-semibold mb-4 sm:mb-6">
             Ready to Be Part of What God Is Building?
           </h2>
-          <p className="text-lg text-white/90 mb-8 leading-relaxed">
+          <p className="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 leading-relaxed px-4">
             Join a growing network of pastors and churches committed to unity, collaboration, and real impact.
           </p>
-          <Button className="bg-gold hover:bg-gold/90 text-dark-blue font-semibold px-8 py-4 text-lg">
+          <Button className="w-full sm:w-auto bg-gold hover:bg-gold/90 text-dark-blue font-semibold px-8 py-4 text-lg">
             JOIN THE NETWORK
           </Button>
         </div>

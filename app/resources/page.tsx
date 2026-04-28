@@ -185,29 +185,27 @@ export default function ResourcesPage() {
 
       {/* Filters Bar */}
       <section className="bg-gray-50 border-b border-gray-200 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-              <option>📍 Location (City / Zip)</option>
-            </select>
-            
-            <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-              <option>⛪ Church Name</option>
-            </select>
-            
-            <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-              <option>📦 Resource Type</option>
-            </select>
-            
-            <select className="px-4 py-2 border border-gray-300 rounded-md bg-white">
-              <option>⚠️ Urgency</option>
-            </select>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3 flex-1">
+              <select className="px-3 py-2 border border-gray-300 rounded-md bg-white text-sm">
+                <option>📍 Location</option>
+              </select>
+              <select className="px-3 py-2 border border-gray-300 rounded-md bg-white text-sm">
+                <option>⛪ Church</option>
+              </select>
+              <select className="px-3 py-2 border border-gray-300 rounded-md bg-white text-sm">
+                <option>📦 Type</option>
+              </select>
+              <select className="px-3 py-2 border border-gray-300 rounded-md bg-white text-sm">
+                <option>⚠️ Urgency</option>
+              </select>
+            </div>
+            <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100 text-sm whitespace-nowrap">
+              <Filter className="mr-2 h-4 w-4" />
+              Reset Filters
+            </Button>
           </div>
-
-          <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100">
-            <Filter className="mr-2 h-4 w-4" />
-            Reset Filters
-          </Button>
         </div>
       </section>
 
@@ -258,11 +256,11 @@ export default function ResourcesPage() {
                     ))}
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button className="flex-1 bg-navy-dark hover:bg-navy-medium text-white font-semibold">
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <Button className="flex-1 bg-navy-dark hover:bg-navy-medium text-white font-semibold text-sm">
                       Respond to Need
                     </Button>
-                    <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100">
+                    <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100 text-sm">
                       View Church
                     </Button>
                   </div>
@@ -274,18 +272,18 @@ export default function ResourcesPage() {
       </section>
 
       {/* Available Resources */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-4xl font-bold text-navy-dark">AVAILABLE RESOURCES</h2>
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8 md:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy-dark">AVAILABLE RESOURCES</h2>
             <Link href="/resources/all">
-              <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-navy-dark hover:text-white">
+              <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-navy-dark hover:text-white text-sm md:text-base whitespace-nowrap">
                 View All Resources →
               </Button>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             {availableResources.map((resource) => (
               <Card key={resource.id} className="overflow-hidden hover:shadow-xl transition-shadow">
                 <CardContent className="p-6">
@@ -313,11 +311,11 @@ export default function ResourcesPage() {
                     ))}
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button className="flex-1 bg-navy-dark hover:bg-navy-medium text-white font-semibold">
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <Button className="flex-1 bg-navy-dark hover:bg-navy-medium text-white font-semibold text-sm">
                       Contact Now
                     </Button>
-                    <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100">
+                    <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100 text-sm">
                       View Church
                     </Button>
                   </div>
@@ -366,24 +364,24 @@ export default function ResourcesPage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-navy-dark text-center mb-16">HOW IT WORKS</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-navy-dark text-center mb-8 md:mb-16">HOW IT WORKS</h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {howItWorks.map((step, idx) => {
               const Icon = step.icon
               return (
                 <div key={idx} className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-24 h-24 mx-auto rounded-full bg-navy-dark flex items-center justify-center">
-                      <Icon className="h-12 w-12 text-gold" />
+                  <div className="relative mb-6 inline-block">
+                    <div className="w-20 h-20 mx-auto rounded-full bg-navy-dark flex items-center justify-center">
+                      <Icon className="h-10 w-10 text-gold" />
                     </div>
-                    <div className="absolute -top-2 -right-2 w-12 h-12 rounded-full bg-gold flex items-center justify-center mx-auto left-0 right-0">
-                      <span className="text-navy-dark font-bold text-xl">{step.number}</span>
+                    <div className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+                      <span className="text-navy-dark font-bold text-lg">{step.number}</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-navy-dark mb-3">{step.title}</h3>
+                  <h3 className="text-xl font-bold text-navy-dark mb-3">{step.title}</h3>
                   <p className="text-gray-600">{step.description}</p>
                 </div>
               )
@@ -396,13 +394,13 @@ export default function ResourcesPage() {
       <section className="py-12 bg-white border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h3 className="text-center text-sm font-semibold text-gray-600 mb-6">CONNECTED CHURCHES</h3>
-          <div className="flex items-center justify-center gap-12 flex-wrap">
+          <div className="flex items-center justify-center gap-6 flex-wrap">
             {['V', '✝️', 'CMIG', '🌱', '❤️'].map((logo, idx) => (
-              <div key={idx} className="w-16 h-16 rounded-full bg-navy-dark flex items-center justify-center text-2xl text-white">
+              <div key={idx} className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-navy-dark flex items-center justify-center text-xl text-white">
                 {logo}
               </div>
             ))}
-            <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-navy-dark hover:text-white">
+            <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-navy-dark hover:text-white text-sm">
               View Full Church Directory →
             </Button>
           </div>
@@ -410,7 +408,7 @@ export default function ResourcesPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-16 md:py-20 overflow-hidden">
         <Image
           src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=1920&h=400&fit=crop"
           alt="Community"
@@ -420,19 +418,19 @@ export default function ResourcesPage() {
         <div className="absolute inset-0 bg-navy-dark/85" />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-4xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
             When Churches Share Resources...
             <br />
-            <span className="text-gold italic text-5xl">Communities Feel the Impact.</span>
+            <span className="text-gold italic text-3xl sm:text-4xl md:text-5xl">Communities Feel the Impact.</span>
           </h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl mx-auto">
             This platform works when churches actively participate.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-gold hover:bg-gold-light text-navy-dark font-semibold px-8 py-6 text-lg">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+            <Button className="bg-gold hover:bg-gold-light text-navy-dark font-semibold px-8 py-5 sm:py-6 text-base sm:text-lg">
               JOIN THE NETWORK
             </Button>
-            <Button className="bg-transparent border-2 border-white hover:bg-white/10 text-white font-semibold px-8 py-6 text-lg">
+            <Button className="bg-transparent border-2 border-white hover:bg-white/10 text-white font-semibold px-8 py-5 sm:py-6 text-base sm:text-lg">
               CONTACT US
             </Button>
           </div>

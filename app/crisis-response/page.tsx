@@ -119,28 +119,28 @@ export default function CrisisResponsePage() {
               </p>
             </div>
             
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center">
               <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
-                  <AlertCircle className="h-12 w-12 text-gold" />
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
+                  <AlertCircle className="h-10 w-10 text-gold" />
                 </div>
                 <p className="font-semibold text-navy-dark">Report a Need</p>
               </div>
-              <div className="flex items-center justify-center">
+              <div className="hidden sm:flex items-center justify-center">
                 <div className="border-t-2 border-dashed border-gray-300 w-full" />
               </div>
               <div className="text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
-                  <Bell className="h-12 w-12 text-gold" />
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
+                  <Bell className="h-10 w-10 text-gold" />
                 </div>
                 <p className="font-semibold text-navy-dark">Network Notified</p>
               </div>
-              <div className="col-span-3 flex justify-center">
-                <div className="border-l-2 border-dashed border-gray-300 h-12" />
+              <div className="sm:col-span-3 flex justify-center">
+                <div className="border-l-2 border-dashed border-gray-300 h-8" />
               </div>
-              <div className="col-span-3 text-center">
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
-                  <Heart className="h-12 w-12 text-gold" />
+              <div className="sm:col-span-3 text-center">
+                <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-navy-dark flex items-center justify-center">
+                  <Heart className="h-10 w-10 text-gold" />
                 </div>
                 <p className="font-semibold text-navy-dark">Churches Take Action</p>
               </div>
@@ -193,11 +193,11 @@ export default function CrisisResponsePage() {
                     ))}
                   </div>
 
-                  <div className="flex gap-2">
-                    <Button className="flex-1 bg-navy-dark hover:bg-navy-medium text-white">
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <Button className="flex-1 bg-navy-dark hover:bg-navy-medium text-white text-sm">
                       RESPOND TO THIS NEED
                     </Button>
-                    <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100">
+                    <Button variant="outline" className="border-navy-dark text-navy-dark hover:bg-gray-100 text-sm">
                       VIEW DETAILS →
                     </Button>
                   </div>

@@ -2,9 +2,10 @@ import { prisma } from '@/lib/prisma'
 import { notFound } from 'next/navigation'
 import ChurchForm from '@/components/admin/ChurchForm'
 
-export default async function EditChurchPage({ params }: { params: { id: string } }) {
+export default async function EditChurchPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const church = await prisma.church.findUnique({
-    where: { id: params.id },
+    where: { id },
   })
 
   if (!church) {
