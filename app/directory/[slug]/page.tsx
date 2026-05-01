@@ -9,12 +9,13 @@ interface PageProps {
 }
 
 export default async function ChurchProfilePage({ params }: PageProps) {
-  const { slug } = await params
+  const { slug: segment } = await params
+  const looksLikeObjectId = /^[0-9a-f]{24}$/i.test(segment)
   const church = await prisma.church.findFirst({
     where: {
-      slug,
       published: true,
       approvalStatus: 'APPROVED',
+      ...(looksLikeObjectId ? { id: segment } : { slug: segment }),
     },
   })
 
