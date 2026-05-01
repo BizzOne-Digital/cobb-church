@@ -3,6 +3,9 @@ import bcrypt from 'bcryptjs'
 
 const prisma = new PrismaClient()
 
+/** Seed admin only — set a new strong password in production (Vercel env / DB update). */
+const SEED_ADMIN_PASSWORD = 'Km9#Tp2$vL8@nQ4wX7jF5hR3cM6bY1zA8'
+
 const DEMO_CHURCH_PASSWORD = 'DemoChurch2026!'
 
 async function main() {
@@ -27,7 +30,7 @@ async function main() {
 
   console.log('✅ Cleared existing data')
 
-  const adminHash = await bcrypt.hash('admin123', 10)
+  const adminHash = await bcrypt.hash(SEED_ADMIN_PASSWORD, 10)
   await prisma.user.create({
     data: {
       name: 'Admin User',
@@ -465,7 +468,7 @@ async function main() {
 
   console.log('')
   console.log('🎉 Seed completed.')
-  console.log('   Admin:        admin@cobbchurch.org / admin123')
+  console.log(`   Admin:        admin@cobbchurch.org / ${SEED_ADMIN_PASSWORD}`)
   console.log(`   Church users: password for all — ${DEMO_CHURCH_PASSWORD}`)
   console.log('     • pastor.powder@demo.cobbchurch.org (First Baptist Powder Springs)')
   console.log('     • pastor.vision@demo.cobbchurch.org (Vision for Souls)')

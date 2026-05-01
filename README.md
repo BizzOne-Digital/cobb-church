@@ -32,7 +32,7 @@ Next.js application for connecting Cobb County churches: onboarding, directory, 
 
    After seeding you can sign in as:
 
-   - **Admin:** `admin@cobbchurch.org` / `admin123`
+   - **Admin:** `admin@cobbchurch.org` / `Km9#Tp2$vL8@nQ4wX7jF5hR3cM6bY1zA8` (defined as `SEED_ADMIN_PASSWORD` in `prisma/seed.ts` — **change it in production**; re-run `npm run seed` only on disposable DBs, or update the admin `User` password hash in Mongo for existing deploys)
    - **Church users (each):** see terminal output — emails `pastor.*@demo.cobbchurch.org` with password **`DemoChurch2026!`**
 
 5. Start the dev server:
